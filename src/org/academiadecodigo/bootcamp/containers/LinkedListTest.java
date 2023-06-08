@@ -64,13 +64,13 @@ public class LinkedListTest {
 
         // Tests with empty list
         if (list.indexOf(data1) != -1) {
-            System.out.println(":(");
             return false;
         }
 
         // Tests with one element
         list.add(data1);
         if (list.indexOf(data1) != 0) {
+            System.out.println(":(");
             return false;
         }
 

@@ -60,14 +60,17 @@ public class LinkedList {
      * @return the index of the element, or -1 if the list does not contain element
      */
     public int indexOf(Object data) {
-        if(data == null){
-            return -1;
+        int index = 0;
+        Node iterator = head;
+        while (iterator.getNext() != null) {
+            if (data.equals(iterator.getNext().getData())) {
+                return index;
+            }
+            iterator = iterator.getNext();
+            index++;
         }
-            Node iterator = head.getNext();
 
-
-        //throw new UnsupportedOperationException();
-        return 0;
+        return -1;
     }
 
     /**
@@ -76,9 +79,18 @@ public class LinkedList {
      * @return true if element was removed
      */
     public boolean remove(Object data) {
+        Node iterator = head;
+        while(iterator.getNext() != null){
+            if(data.equals(iterator.getNext().getData())){
+                iterator.setNext(iterator.getNext().getNext());
+                length--;
+                return true;
+            }
+            iterator = iterator.getNext();
+        }
+        return false;
 
-        throw new UnsupportedOperationException();
-
+     //   throw new UnsupportedOperationException();
     }
 
     private class Node {
@@ -106,6 +118,7 @@ public class LinkedList {
         }
 
         public void setNext(Node next) {
+
             this.next = next;
         }
     }
