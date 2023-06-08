@@ -43,7 +43,6 @@ public class LinkedList {
             return null;
         }
             Node iterator = head.getNext();
-
             for (int i = 0; i < index; i++) {
                 iterator = iterator.getNext();
             }
@@ -61,7 +60,10 @@ public class LinkedList {
      * @return the index of the element, or -1 if the list does not contain element
      */
     public int indexOf(Object data) {
-
+        if(data == null){
+            return -1;
+        }
+            Node iterator = head.getNext();
 
 
         //throw new UnsupportedOperationException();
