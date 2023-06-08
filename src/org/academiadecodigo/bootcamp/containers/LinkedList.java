@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp.containers;
 
-public class LinkedList {
+public class LinkedList  {
 
     private Node head;
     private int length = 0;
@@ -93,22 +93,22 @@ public class LinkedList {
      //   throw new UnsupportedOperationException();
     }
 
-    private class Node {
+    private class Node <T> {
 
-        private Object data;
+        private T data;
         private Node next;
 
-        public Node(Object data) {
+        public Node(T data) {
             this.data = data;
             next = null;
         }
 
-        public Object getData() {
+        public T getData() {
 
             return data;
         }
 
-        public void setData(Object data) {
+        public void setData(T data) {
             this.data = data;
         }
 
