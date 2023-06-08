@@ -3,6 +3,9 @@ package org.academiadecodigo.bootcamp.containers;
 public class LinkedList  {
 
     private Node head;
+
+
+    //leith was here
     private int length = 0;
 
     public LinkedList() {
